@@ -1,4 +1,16 @@
-(ns gilded-rose.core)
+(ns gilded-rose.core
+  (:require [clojure.spec :as s]))
+
+(s/def ::sell-in (s/and int? #(>= 0 %)))
+(s/def ::name string?)
+(s/def ::quality (s/int-in 0 51))
+(s/def ::item (s/keys :req-un [::sell-in ::name ::quality]))
+
+(s/def ::items (s/coll-of ::item))
+
+(s/fdef update-quality
+        :args (s/cat :items ::items)
+        :ret ::items)
 
 (defn update-quality [items]
   (map
@@ -26,13 +38,13 @@
       (if (not= "Sulfuras, Hand of Ragnaros" (:name item))
         (merge item {:sell-in (dec (:sell-in item))})
         item))
-  items)))
+       items)))
 
 (defn item [item-name, sell-in, quality]
   {:name item-name, :sell-in sell-in, :quality quality})
 
 (defn update-current-inventory[]
-  (let [inventory 
+  (let [inventory
     [
       (item "+5 Dexterity Vest" 10 20)
       (item "Aged Brie" 2 0)

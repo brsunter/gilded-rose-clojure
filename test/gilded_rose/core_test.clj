@@ -3,12 +3,12 @@
             [clojure.spec :as s]
             [clojure.spec.test :as st]
             [clojure.test.check :as tc]
-            [clojure.pprint :as pprint]
             [clojure.test.check.generators :as gen]
-            [gilded-rose.core :refer [update-quality update-item-quality] :as c]))
+            [gilded-rose.core :as c]))
 
-(defn check' [spec-check]
-  (is (nil? (-> spec-check st/summarize-results :check-failed))))
+(defn spec-passed?
+  [spec-res]
+  (not (some :failure spec-res)))
 
 (deftest test-all
-  (check' (st/check)))
+  (is (spec-passed? (st/check))))

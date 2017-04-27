@@ -6,5 +6,6 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha14"]]
   :profiles {:dev
              {:dependencies [[org.clojure/test.check "0.9.0"]]}}
+  :monkeypatch-clojure-test false
   :plugins [[speclj "3.3.2"]]
   :test-paths ["test"])

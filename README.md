@@ -57,6 +57,15 @@ however "Sulfuras" is a legendary item and as such its quality is 80 and it
 never alters.
 
 ---
+
+[{:type clojure.lang.ExceptionInfo
+   :message "Specification-based check failed"
+   :data {:clojure.spec/problems ({:path [:ret :quality], :pred (int-in-range? 0 51 %), :val 51, :via [:gilded-rose.items.spec/item :gilded-rose.items.spec/quality], :in [0 :quality]}), :clojure.spec.test/args ([{:sell-in 1, :name "Backstage passes to a TAFKAL80ETC concert", :quality 48}]), :clojure.spec.test/val ({:sell-in 0, :name "Backstage passes to a TAFKAL80ETC concert", :quality 51}), :clojure.spec/failure :check-failed}
+
+
+
+
+---
 Original Source: <http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/>
 
 ### Gilded Rose In Other Languages

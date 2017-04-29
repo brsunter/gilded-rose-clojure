@@ -5,8 +5,8 @@
 (defn update-item-quality
   [{:keys [sell-in] :as item}]
   (if (neg? sell-in)
-    (update item :quality #(- % 2))
-    (update item :quality dec)))
+    (i/decrease-quality item 2)
+    (i/decrease-quality item 1)))
 
 (defmethod i/update-item :default
   [item]

@@ -4,5 +4,5 @@
 (def aged-brie-name "Aged Brie")
 
 (defmethod i/update-item aged-brie-name [item]
-  (-> (update item :quality inc)
+  (-> (i/increase-quality item 1)
       (update :sell-in dec)))

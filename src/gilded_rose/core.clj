@@ -1,7 +1,11 @@
 (ns gilded-rose.core
   (:require [clojure.spec :as s]
             [gilded-rose.items.spec :as is]
-            [gilded-rose.items.item :as i]))
+            [gilded-rose.items.item :as i]
+            [gilded-rose.items.aged-brie]
+            [gilded-rose.items.backstage-pass]
+            [gilded-rose.items.default]
+            [gilded-rose.items.legendary]))
 
 (s/fdef update-quality
         :args (s/cat :items ::is/items)

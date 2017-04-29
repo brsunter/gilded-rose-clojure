@@ -1,6 +1,6 @@
 (ns gilded-rose.items.backstage-pass
   (:require [clojure.spec :as s]
-            [gilded-rose.items.item :as item]))
+            [gilded-rose.items.item :as i]))
 
 (def backstage-pass-name "Backstage passes to a TAFKAL80ETC concert")
 
@@ -18,8 +18,8 @@
     :rising (update pass :quality #(+ 2 %))
     :peak (update pass :quality #(+ 3 %))))
 
-(defmethod item/update-item backstage-pass-name
-  [{:keys [sell-in name quality] :as item}]
+(defmethod i/update-item backstage-pass-name
+  [{:keys [sell-in] :as item}]
   (let [[quality-level _] (s/conform ::backstage-pass-quality-level sell-in)]
     (-> (update-backstage-pass-quality item quality-level)
         (update :sell-in dec))))

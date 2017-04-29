@@ -1,8 +1,6 @@
 (ns gilded-rose.items.legendary
-  (:require [gilded-rose.items.item :as item]))
+  (:require [gilded-rose.items.item :as i]))
 
 (def legendary-name "Sulfuras, Hand of Ragnaros")
 
-(defmethod item/update-item legendary-name
-  [{:keys [sell-in name quality] :as item}]
-  item)
+(defmethod i/update-item legendary-name [item] item)

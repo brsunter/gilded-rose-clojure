@@ -11,14 +11,5 @@
   [spec-res]
   (not (some :failure spec-res)))
 
-(s/fdef compare-legacy
-  :args (s/cat :items ::is/items)
-  :ret ::is/items
-  :fn #(= (:ret %) (l/update-quality (:args %))))
-
-(defn compare-legacy
-  [items]
-  (c/update-quality items))
-
 (deftest test-all
   (is (spec-passed? (st/check))))

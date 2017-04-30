@@ -3,7 +3,9 @@
 
 (s/def ::item-names #{"Aged Brie"
                       "Sulfuras, Hand Of Ragnaros"
-                      "Backstage passes to a TAFKAL80ETC concert"})
+                      "Backstage passes to a TAFKAL80ETC concert"
+                      "Conjured Beanie"
+                      "High Top Boots"})
 
 (s/def ::sell-in int?)
 (s/def ::name (s/or :item-name ::item-names :s string?))

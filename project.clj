@@ -7,5 +7,7 @@
   :profiles {:dev
              {:dependencies [[org.clojure/test.check "0.9.0"]]}}
   :monkeypatch-clojure-test false
-  :plugins [[speclj "3.3.2"]]
+  :plugins [[speclj "3.3.2"]
+            [lein-cloverage "1.0.9"]
+            [lein-auto "0.1.3"]]
   :test-paths ["test"])

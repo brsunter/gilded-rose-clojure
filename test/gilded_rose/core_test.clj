@@ -1,11 +1,9 @@
 (ns gilded-rose.core-test
   (:require [clojure.test :refer [is deftest]]
-            [clojure.spec :as s]
             [clojure.test.check.impl]
             [clojure.spec.test :as st]
-            [gilded-rose.items.spec :as is]
-            [gilded-rose.core :as c]
-            [gilded-rose.legacy :as l]))
+            [gilded-rose.core]
+            [gilded-rose.legacy]))
 
 (defn spec-passed?
   [spec-res]

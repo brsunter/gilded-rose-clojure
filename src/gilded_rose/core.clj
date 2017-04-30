@@ -5,7 +5,6 @@
             [gilded-rose.items.aged-brie]
             [gilded-rose.items.backstage-pass]
             [gilded-rose.items.conjured]
-            [gilded-rose.items.default]
             [gilded-rose.items.legendary]))
 
 (s/fdef update-quality

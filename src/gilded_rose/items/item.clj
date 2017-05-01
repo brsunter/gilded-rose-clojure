@@ -3,10 +3,14 @@
 (defmulti update-item :name)
 
 (def max-quality 50)
+(def min-quality 0)
 
 (defn decrease-quality
-  [item x]
-  (update item :quality #(Math/abs (- % x))))
+  [{:keys [quality] :as item} x]
+  (let [next-quality (- quality x)]
+    (if (>= next-quality min-quality)
+      (assoc item :quality next-quality)
+      (assoc item :quality min-quality))))
 
 (defn increase-quality
   [{:keys [quality] :as item} x]
